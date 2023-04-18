@@ -1,0 +1,150 @@
+/* 
+- Purple: hsl(259, 100%, 65%)
+- Light red: hsl(0, 100%, 67%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Off white: hsl(0, 0%, 94%)
+- Light grey: hsl(0, 0%, 86%)
+- Smokey grey: hsl(0, 1%, 44%)
+- Offblack: hsl(0, 0%, 8%) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #dbdbdb;
+  padding: 2rem;
+  /* margin: auto; */
+}
+
+.container {
+  max-width: 42rem;
+  background-color: #fff;
+  /* background-color: #ff5757; */
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1rem;
+  border-bottom-right-radius: 11rem;
+  /* justify-content: center;
+  align-items: center; */
+}
+.input__box {
+  display: flex;
+  gap: 1.6rem;
+  padding: 2rem;
+  padding-right: 7rem;
+  border-bottom: 1px solid #1414143b;
+  width: 90%;
+  position: relative;
+}
+.small__box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  display: block;
+  /* font-size: 1rem; */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.input {
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #14141456;
+}
+
+.logo {
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #854dff;
+  position: absolute;
+  bottom: -25%;
+  right: -8%;
+  cursor: pointer;
+}
+
+.label__day {
+}
+.label__month {
+}
+.label__year {
+}
+
+/* OUTPUT */
+.output__box {
+  padding-top: 1rem;
+  /* align-items: flex-start; */
+  /* justify-content: flex-start; */
+}
+.output__year,
+.output__month,
+.output__days {
+  font-size: 4rem;
+  font-weight: 900;
+  font-style: italic;
+}
+.output__year-input,
+.output__month-input,
+.output__day-input {
+  color: #854dff;
+  font-size: 5rem;
+}
+
+.error__day,
+.error__month,
+.error__year,
+.error__required__day,
+.error__required__month,
+.error__required__year {
+  display: none;
+  font-size: 0.8rem;
+  color: #ff5757;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 25em) {
+  .input__box {
+    padding: 2rem;
+    padding-bottom: 5rem;
+    width: 100%;
+  }
+
+  .logo {
+    bottom: -23%;
+    right: 50%;
+    transform: translate(50%);
+  }
+
+  .output__box {
+    padding-top: 3rem;
+  }
+}
+
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: #3e52a3;
+} */
