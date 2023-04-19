@@ -28,7 +28,7 @@ body {
 }
 
 .container {
-  max-width: 42rem;
+  max-width: 50rem;
   background-color: #fff;
   /* background-color: #ff5757; */
   margin: 10rem auto;
@@ -83,8 +83,6 @@ body {
   cursor: pointer;
 }
 
-
-
 /* OUTPUT */
 .output__box {
   padding-top: 1rem;
@@ -113,7 +111,7 @@ body {
 .error__required__month,
 .error__required__year {
   display: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #ff5757;
 }
 
