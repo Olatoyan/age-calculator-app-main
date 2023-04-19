@@ -78,6 +78,10 @@ body {
   border: 1px solid #14141456;
 }
 
+.input:focus {
+  border: 1px solid #854dff;
+}
+
 .logo {
   height: 5rem;
   width: 5rem;
@@ -88,6 +92,11 @@ body {
   bottom: -25%;
   right: -8%;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  background-color: #141414;
 }
 
 /* OUTPUT */
