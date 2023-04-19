@@ -108,6 +108,7 @@ body {
 .output__day-input {
   color: #854dff;
   font-size: 5rem;
+  transition: all 0.3s;
 }
 
 .error__day,
@@ -141,10 +142,10 @@ body {
   }
 }
 
-/* .attribution {
-  font-size: 11px;
+.attribution {
+  font-size: 1.2rem;
   text-align: center;
 }
 .attribution a {
   color: #3e52a3;
-} */
+}
