@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/Olatoyan/age-calculator-app-main)
-- Live Site URL: (https://bright-kulfi-385283.netlify.app)
+- Live Site URL: (https://toyan-age-calculator.netlify.app)
 
 ### Built with
 
@@ -48,3 +48,8 @@ Users should be able to:
 ### What I learned
 
 Working with dates can be very tricky. But I'm glad I got it right
+
+## Author
+
+- Frontend Mentor - [@olatoyan](https://www.frontendmentor.io/profile/Olatoyan)
+- Twitter - [@_\_\_Annonnymouss_](https://www.twitter.com/_Annonnymouss_)
