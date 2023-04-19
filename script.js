@@ -29,12 +29,12 @@ function validateForm() {
     dayInput.style.border = "1px solid #ff5252";
     labelDay.style.color = "#ff5252";
     // return false;
-  } else if (day < 1 || day > 31) {
+  } else if (day < 1 || day > 31 || day === 0) {
     invalidDay.style.display = "block";
     requiredDay.style.display = "none";
     dayInput.style.border = "1px solid #ff5252";
     labelDay.style.color = "#ff5252";
-    // return false;
+    return false;
   } else {
     invalidDay.style.display = "none";
     requiredDay.style.display = "none";
@@ -55,7 +55,7 @@ function validateForm() {
     requiredMonth.style.display = "none";
     monthInput.style.border = "1px solid #ff5252";
     labelMonth.style.color = "#ff5252";
-    // return false;
+    return false;
   } else {
     invalidMonth.style.display = "none";
     requiredMonth.style.display = "none";

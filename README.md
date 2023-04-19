@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/Olatoyan/age-calculator-app-main)
-- Live Site URL: (https://toyan-age-calculator.netlify.app)
+- Live Site URL: (https://toyan-age-calculator.netlify.app/)
 
 ### Built with
 
