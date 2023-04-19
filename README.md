@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/Olatoyan/age-calculator-app-main)
-- Live Site URL: (https://serene-naiad-b96064.netlify.app)
+- Live Site URL: (https://snazzy-profiterole-c6e93f.netlify.app)
 
 ### Built with
 
