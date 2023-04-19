@@ -123,17 +123,36 @@ function validateForm() {
   // const ageInDays = Math.floor(
   //   ((ageInMs % 31536000000) % 2628000000) / 86400000
   // );
+
   let ageInYears = now.getFullYear() - dob.getFullYear();
   let ageInMonths = now.getMonth() - dob.getMonth();
   let ageInDays = now.getDate() - dob.getDate();
 
-  if (ageInMonths < 0 || (ageInMonths === 0 && ageInDays < 0)) {
+  if (ageInDays < 0) {
+    ageInMonths--;
+    const daysInLastMonth = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      0
+    ).getDate();
+    ageInDays += daysInLastMonth;
+  }
+
+  if (ageInMonths < 0) {
     ageInYears--;
     ageInMonths += 12;
-    if (ageInDays < 0) {
-      ageInDays += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-    }
   }
+  // let ageInYears = now.getFullYear() - dob.getFullYear();
+  // let ageInMonths = now.getMonth() - dob.getMonth();
+  // let ageInDays = now.getDate() - dob.getDate();
+
+  // if (ageInMonths < 0 || (ageInMonths === 0 && ageInDays < 0)) {
+  //   ageInYears--;
+  //   ageInMonths += 12;
+  //   if (ageInDays < 0) {
+  //     ageInDays += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+  //   }
+  // }
 
   outputYear.textContent = ageInYears;
   outputMonth.textContent = ageInMonths;
