@@ -110,18 +110,30 @@ function validateForm() {
   }
 
   const ageInMs = now - dob;
-  const ageInYears = Math.floor(ageInMs / (1000 * 60 * 60 * 24 * 365));
-  // const ageInYears = Math.floor(ageInMs / 31536000000);
 
-  const ageInMonths = Math.floor(
-    (ageInMs % (1000 * 60 * 60 * 24 * 365)) / (30.44 * 86400000)
-  );
+  // const ageInYears = Math.floor(ageInMs / (1000 * 60 * 60 * 24 * 365));
+  // // const ageInYears = Math.floor(ageInMs / 31536000000);
+
+  // // const ageInMonths = Math.floor(
+  // //   (ageInMs % (1000 * 60 * 60 * 24 * 365)) / (30.44 * 86400000)
+  // // );
   // const ageInMonths = Math.floor(
-  //   (ageInMs % (1000 * 60 * 60 * 24 * 365)) / (30.4375 * 86400000)
+  //   (ageInMs % (1000 * 60 * 60 * 24 * 365)) / 2628000000
   // );
-  const ageInDays = Math.floor(
-    ((ageInMs % 31536000000) % (30.44 * 86400000)) / 86400000
-  );
+  // const ageInDays = Math.floor(
+  //   ((ageInMs % 31536000000) % 2628000000) / 86400000
+  // );
+  let ageInYears = now.getFullYear() - dob.getFullYear();
+  let ageInMonths = now.getMonth() - dob.getMonth();
+  let ageInDays = now.getDate() - dob.getDate();
+
+  if (ageInMonths < 0 || (ageInMonths === 0 && ageInDays < 0)) {
+    ageInYears--;
+    ageInMonths += 12;
+    if (ageInDays < 0) {
+      ageInDays += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+    }
+  }
 
   outputYear.textContent = ageInYears;
   outputMonth.textContent = ageInMonths;
