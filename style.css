@@ -24,6 +24,11 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #dbdbdb;
   padding: 2rem;
+
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+
   /* margin: auto; */
 }
 
@@ -31,7 +36,9 @@ body {
   max-width: 50rem;
   background-color: #fff;
   /* background-color: #ff5757; */
-  margin: 10rem auto;
+  /* margin: 10rem auto; */
+  /* justify-content: center;
+  align-items: center; */
   display: flex;
   flex-direction: column;
   padding: 2rem;
