@@ -52,4 +52,4 @@ Working with dates can be very tricky. But I'm glad I got it right
 ## Author
 
 - Frontend Mentor - [@olatoyan](https://www.frontendmentor.io/profile/Olatoyan)
-- Twitter - [@_\_\_Annonnymouss_](https://www.twitter.com/_Annonnymouss_)
+- Twitter - [@Toyan](https://www.twitter.com/_Annonnymouss_)
