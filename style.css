@@ -38,8 +38,6 @@ body {
   padding: 2rem;
   border-radius: 1rem;
   border-bottom-right-radius: 11rem;
-  /* justify-content: center;
-  align-items: center; */
 }
 .input__box {
   display: flex;
@@ -58,7 +56,6 @@ body {
 
 .label {
   display: block;
-  /* font-size: 1rem; */
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -96,8 +93,6 @@ body {
 /* OUTPUT */
 .output__box {
   padding-top: 1rem;
-  /* align-items: flex-start; */
-  /* justify-content: flex-start; */
 }
 .output__year,
 .output__month,
