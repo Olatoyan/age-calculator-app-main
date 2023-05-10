@@ -129,17 +129,6 @@ function validateForm() {
     ageInYears--;
     ageInMonths += 12;
   }
-  // let ageInYears = now.getFullYear() - dob.getFullYear();
-  // let ageInMonths = now.getMonth() - dob.getMonth();
-  // let ageInDays = now.getDate() - dob.getDate();
-
-  // if (ageInMonths < 0 || (ageInMonths === 0 && ageInDays < 0)) {
-  //   ageInYears--;
-  //   ageInMonths += 12;
-  //   if (ageInDays < 0) {
-  //     ageInDays += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-  //   }
-  // }
 
   outputYear.textContent = ageInYears;
   outputMonth.textContent = ageInMonths;
