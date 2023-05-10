@@ -111,19 +111,6 @@ function validateForm() {
 
   const ageInMs = now - dob;
 
-  // const ageInYears = Math.floor(ageInMs / (1000 * 60 * 60 * 24 * 365));
-  // // const ageInYears = Math.floor(ageInMs / 31536000000);
-
-  // // const ageInMonths = Math.floor(
-  // //   (ageInMs % (1000 * 60 * 60 * 24 * 365)) / (30.44 * 86400000)
-  // // );
-  // const ageInMonths = Math.floor(
-  //   (ageInMs % (1000 * 60 * 60 * 24 * 365)) / 2628000000
-  // );
-  // const ageInDays = Math.floor(
-  //   ((ageInMs % 31536000000) % 2628000000) / 86400000
-  // );
-
   let ageInYears = now.getFullYear() - dob.getFullYear();
   let ageInMonths = now.getMonth() - dob.getMonth();
   let ageInDays = now.getDate() - dob.getDate();
