@@ -19,7 +19,7 @@ const requiredYear = document.querySelector(".error__required__year");
 const calcLogo = document.querySelector(".logo");
 const result = document.querySelector(".result");
 
-function validateForm() {
+const validateForm = function () {
   // this is the day input
   const day = dayInput.value;
   dayInput.value = dayInput.value.replace(/[^0-9]/g, "");
@@ -130,10 +130,26 @@ function validateForm() {
     ageInMonths += 12;
   }
 
-  outputYear.textContent = ageInYears;
-  outputMonth.textContent = ageInMonths;
-  outputDay.textContent = ageInDays;
-}
+  // outputYear.textContent = ageInYears;
+  // outputMonth.textContent = ageInMonths;
+  // outputDay.textContent = ageInDays;
+  // Display age values using counting animation
+  startCountingAnimation(ageInYears, outputYear);
+  startCountingAnimation(ageInMonths, outputMonth);
+  startCountingAnimation(ageInDays, outputDay);
+};
+
+const startCountingAnimation = (target, outputElement) => {
+  let current = 1;
+  const interval = setInterval(() => {
+    if (current <= target) {
+      outputElement.textContent = current;
+      current++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 80); // Adjust the interval for desired animation speed (in milliseconds)
+};
 
 // making sure there are no letters
 dayInput.addEventListener("input", function () {
