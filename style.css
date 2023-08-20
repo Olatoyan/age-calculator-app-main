@@ -147,3 +147,9 @@ body {
 .attribution a {
   color: #3e52a3;
 }
+
+.result {
+  color: #ff5252;
+  font-size: 1.2rem;
+  display: none;
+}

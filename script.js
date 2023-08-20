@@ -19,6 +19,12 @@ const requiredYear = document.querySelector(".error__required__year");
 const calcLogo = document.querySelector(".logo");
 const result = document.querySelector(".result");
 
+const invalidDetails = function () {
+  outputYear.textContent = "- -";
+  outputMonth.textContent = "- -";
+  outputDay.textContent = "- -";
+};
+
 const validateForm = function () {
   // this is the day input
   const day = dayInput.value;
@@ -34,6 +40,7 @@ const validateForm = function () {
     requiredDay.style.display = "none";
     dayInput.style.border = "1px solid #ff5252";
     labelDay.style.color = "#ff5252";
+    invalidDetails();
     return false;
   } else {
     invalidDay.style.display = "none";
@@ -49,12 +56,16 @@ const validateForm = function () {
     requiredMonth.style.display = "block";
     monthInput.style.border = "1px solid #ff5252";
     labelMonth.style.color = "#ff5252";
+    invalidDetails();
+
     // return false;
   } else if (month < 1 || month > 12) {
     invalidMonth.style.display = "block";
     requiredMonth.style.display = "none";
     monthInput.style.border = "1px solid #ff5252";
     labelMonth.style.color = "#ff5252";
+    invalidDetails();
+
     return false;
   } else {
     invalidMonth.style.display = "none";
@@ -73,18 +84,24 @@ const validateForm = function () {
     requiredYear.style.display = "block";
     yearInput.style.border = "1px solid #ff5252";
     labelYear.style.color = "#ff5252";
+    invalidDetails();
+
     return false;
   } else if (year > nowYear) {
     invalidYear.style.display = "block";
     requiredYear.style.display = "none";
     yearInput.style.border = "1px solid #ff5252";
     labelYear.style.color = "#ff5252";
+    invalidDetails();
+
     return false;
   } else if (year.length !== 4) {
     invalidYear.style.display = "block";
     requiredYear.style.display = "none";
     yearInput.style.border = "1px solid #ff5252";
     labelYear.style.color = "#ff5252";
+    invalidDetails();
+
     return false;
   } else {
     invalidYear.style.display = "none";
@@ -94,22 +111,16 @@ const validateForm = function () {
   }
   const dob = new Date(year, month - 1, day);
 
-  if (dob > now) {
-    result.textContent = "Please enter a date in the past.";
-    return false;
-  } else {
-    result.style.display = "none";
-  }
-
   const daysInMonth = new Date(year, month, 0).getDate();
+
   if (day > daysInMonth) {
     invalidDay.style.display = "block";
+    invalidDetails();
+
     return false;
   } else {
     invalidDay.style.display = "none";
   }
-
-  const ageInMs = now - dob;
 
   let ageInYears = now.getFullYear() - dob.getFullYear();
   let ageInMonths = now.getMonth() - dob.getMonth();
@@ -122,12 +133,21 @@ const validateForm = function () {
       now.getMonth(),
       0
     ).getDate();
+
     ageInDays += daysInLastMonth;
   }
 
   if (ageInMonths < 0) {
     ageInYears--;
     ageInMonths += 12;
+  }
+
+  if (dob.getTime() > now.getTime()) {
+    result.style.display = "block";
+    invalidDetails();
+    return false;
+  } else {
+    result.style.display = "none";
   }
 
   // outputYear.textContent = ageInYears;
@@ -140,7 +160,7 @@ const validateForm = function () {
 };
 
 const startCountingAnimation = (target, outputElement) => {
-  let current = 1;
+  let current = 0;
   const interval = setInterval(() => {
     if (current <= target) {
       outputElement.textContent = current;
@@ -148,7 +168,7 @@ const startCountingAnimation = (target, outputElement) => {
     } else {
       clearInterval(interval);
     }
-  }, 80); // Adjust the interval for desired animation speed (in milliseconds)
+  }, 50);
 };
 
 // making sure there are no letters
@@ -158,12 +178,10 @@ dayInput.addEventListener("input", function () {
 });
 monthInput.addEventListener("input", function () {
   const month = monthInput.value;
-
   monthInput.value = month.replace(/[^0-9]/g, "");
 });
 yearInput.addEventListener("input", function () {
   const year = yearInput.value;
-
   yearInput.value = year.replace(/[^0-9]/g, "");
 });
 
